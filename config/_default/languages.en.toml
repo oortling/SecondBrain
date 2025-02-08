@@ -1,3 +1,5 @@
+#config/_default/languages.en.toml
+
 languageName = "English"
 languageCode = "en"
 languageDirection = "ltr"
@@ -5,4 +7,9 @@ weight = 1
 title = "Kieran's Blog"
 copyright = "© 2025 Kieran"
 
+[params.author]
+    name = "Kieran"
+    image = "images/author.png"
+    bio = "A software engineer"
+    headline = "The only way to do great work is to love what you do."
 

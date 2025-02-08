@@ -1,11 +1,3 @@
-[header]
-    logo = "/assets/favicon.ico"
-
-[author]
-    name = "Kieran"
-    image = "/assets/author.png"
-    bio = "A software engineer"
-
 [homepage]
     layout = "profile"
     
