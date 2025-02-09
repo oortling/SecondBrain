@@ -4,12 +4,21 @@ languageName = "English"
 languageCode = "en"
 languageDirection = "ltr"
 weight = 1
+
 title = "Kieran's Blog"
 copyright = "© 2025 Kieran"
+
+[params]
+  dateFormat = "2 January 2006"
+
+  # mainSections = ["section1", "section2"]
+  # description = "My awesome website"
 
 [params.author]
     name = "Kieran"
     image = "images/author.png"
-    bio = "A software engineer"
     headline = "The only way to do great work is to love what you do."
-
+    bio = "A software engineer"
+    links = [
+        {email = "oldmeatovo@gmail.com"}
+    ]

@@ -1,3 +1,20 @@
+defaultAppearance = "light"
+enableSearch = true
+enableCodeCopy = false
+
+[header]
+    layout = "basic" # valid options: basic, hamburger, hybrid, custom
+    # logo = "img/logo.jpg"
+    # logoDark = "img/dark-logo.jpg"
+    showTitle = true
+
 [homepage]
     layout = "profile"
-    
+    showRecent = true
+    recentLimit = 5
+
+[footer]
+    showCopyright = true
+    showThemeAttribution = true
+    showAppearanceSwitcher = false
+    showScrollToTop = true
