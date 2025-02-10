@@ -1,0 +1,35 @@
+name: Deploy Hugo Site
+
+on:
+  push:
+    branches:
+      - master  # 当 master 分支有更新时触发
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Hugo
+      uses: peaceiris/actions-hugo@v2
+      with:
+        hugo-version: '0.143.1'  # 使用你需要的 Hugo 版本
+        extended: true
+
+    - name: Clean cache
+      run: rm -rf public/*
+
+    - name: Build Hugo site
+      run: hugo -D
+
+    - name: Deploy to server
+      uses: appleboy/scp-action@master
+      with:
+        host: ${{ secrets.SERVER_HOST }}
+        username: ${{ secrets.SERVER_USER }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        source: "public/"
+        target: "/root/SecondBrain"  # 替换为你的服务器网站路径
