@@ -13,6 +13,15 @@ enableCodeCopy = false
     showRecent = true
     recentLimit = 5
 
+[article]
+    showDate = true
+    showDateUpdated = false
+    showAuthor = true
+    showBreadcrumbs = true
+    showDraftLabel = true
+    showEdit = true
+    showTableOfContents = false
+
 [footer]
     showCopyright = true
     showThemeAttribution = true

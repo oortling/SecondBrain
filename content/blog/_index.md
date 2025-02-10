@@ -1,5 +1,5 @@
 ---
-title: "Content Samples"
+title: "Blog"
 description: "See what's possible with Congo."
 
 cascade:
