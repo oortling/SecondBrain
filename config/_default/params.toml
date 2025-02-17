@@ -1,6 +1,8 @@
 defaultAppearance = "light"
 enableSearch = true
 enableCodeCopy = false
+enableImageLazyLoading = true
+enableImageWebp = true
 
 [header]
     layout = "basic" # valid options: basic, hamburger, hybrid, custom
@@ -27,3 +29,11 @@ enableCodeCopy = false
     showThemeAttribution = true
     showAppearanceSwitcher = false
     showScrollToTop = true
+
+[list]
+    showBreadcrumbs = true
+    showSummary = false
+    showTableOfContents = true
+    showTaxonomies = false
+    groupByYear = false
+    paginationWidth = 1

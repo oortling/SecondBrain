@@ -1,0 +1,20 @@
+{{ define "main" }}
+<article class="container">
+  <h1 class="post-title">{{ .Title }}</h1>
+  
+  {{ with .Content }}
+  <div class="content">{{ . }}</div>
+  {{ end }}
+
+  <div class="gallery-grid">
+    {{ range .Resources.ByType "image" }}
+    <a href="{{ .RelPermalink }}" class="gallery-item" data-pswp-width="{{ .Width }}" 
+       data-pswp-height="{{ .Height }}" data-caption="{{ .Name }}">
+      <img src="{{ (.Fill "300x300 center").RelPermalink }}" 
+           alt="{{ .Name }}" 
+           loading="lazy">
+    </a>
+    {{ end }}
+  </div>
+</article>
+{{ end }}
