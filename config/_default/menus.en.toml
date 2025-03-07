@@ -39,5 +39,5 @@
 
 [[footer]]
   name = "皖ICP备2025075131号"
-  pageRef = "https://beian.miit.gov.cn/"
+  url = "https://beian.miit.gov.cn/"
   weight = 10

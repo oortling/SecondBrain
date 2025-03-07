@@ -17,17 +17,26 @@ enableImageWebp = true
 
 [article]
     showDate = true
-    showDateUpdated = false
+    showDateUpdated = true
     showAuthor = true
     showBreadcrumbs = true
     showDraftLabel = true
     showEdit = true
-    showTableOfContents = false
+    # editURL = "https://github.com/jpanther/congo/tree/dev/exampleSite/content/"
+    editAppendPath = true
+    showHeadingAnchors = true
+    showPagination = true
+    invertPagination = false
+    showReadingTime = true
+    showTableOfContents = true
+    showTaxonomies = false
+    showWordCount = false
+    showComments = false
 
 [footer]
     showCopyright = true
     showThemeAttribution = true
-    showAppearanceSwitcher = false
+    showAppearanceSwitcher = true
     showScrollToTop = true
 
 [list]
