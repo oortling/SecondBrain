@@ -1,6 +1,6 @@
 defaultAppearance = "light"
 enableSearch = true
-enableCodeCopy = false
+enableCodeCopy = true
 enableImageLazyLoading = true
 enableImageWebp = true
 
