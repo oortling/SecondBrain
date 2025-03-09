@@ -16,7 +16,7 @@ copyright = "© 2025 Kieran"
 
 [params.author]
     name = "Kieran"
-    image = "images/author.png"
+    image = "img/author.png"
     headline = "The only way to do great work is to love what you do."
     bio = "A software engineer"
     links = [
