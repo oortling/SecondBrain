@@ -1,12 +1,12 @@
-# config/_default/menus.en.toml
+# config/_default/menus.zh-Hans.toml
 
 [[main]]
-  name = "Blog"
+  name = "博客"
   pageRef = "blog"
   weight = 10
 
 [[main]]
-  name = "Gallery"
+  name = "光影"
   pageRef = "photography"
   weight = 20
 
@@ -18,7 +18,7 @@
     icon = "search"
 
 [[main]]
-  identifier = "locale"
+  identifier = "语言"
   weight = 100
   [main.params]
     action = "locale"

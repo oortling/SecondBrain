@@ -11,13 +11,13 @@ showDateUpdated: true
 ---
 
 {{< lead >}}
-构建你自己的家庭数据中心
+Build your own home data center
 {{< /lead >}}
 
-## 总览
+## Overview
 
 
-## 家庭网络拓扑
+## Home Network Topology
 
 
-## Nas 存储服务
+## NAS Storage Services

@@ -41,7 +41,7 @@ enableImageWebp = true
 
 [list]
     showBreadcrumbs = true
-    showSummary = false
+    showSummary = true
     showTableOfContents = true
     showTaxonomies = false
     groupByYear = false

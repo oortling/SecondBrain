@@ -1,40 +1,40 @@
 ---
-title: "Website Deploy"
+title: "Website Deployment"
 date: "2025-02-09"
 lastmod: "2025-03-07"
 cover: "thumb-sigmund-taxUPTfDkpc-unsplash.jpg"
-summary: "This is my automated deployment site process."
+summary: "This is my automated website deployment process."
 coverAlt: "A plan for automating the deployment of a personal blog using Hugo and GitHub Actions."
-coverCaption: "Let's build your website !"
+coverCaption: "Let's build your website!"
 showDateUpdated: true
 ---
 
-## 准备条件
+## Prerequisites
 
-- 一个域名
-- 一个云服务器
-- 一个 [Hugo](https://hugo.opendocs.io) 站点
+- A domain name
+- A cloud server
+- A [Hugo](https://hugo.opendocs.io) site
 
-## 技术选型
+## Technology Stack
 
-网站内容生成：选择了由 Go 语言编写的 Hugo 框架，hugo 可以快速构建出静态网站，并且支持多种主题和插件，可以满足大部分需求。
+Website content generation: Chose the Hugo framework written in Go language. Hugo can quickly build static websites and supports various themes and plugins, meeting most requirements.
 
-自动化构建流程：使用`Github Actions`来实现自动化构建，github actions可以实现代码的自动化构建、测试和部署，并且支持多种语言和框架。
+Automated build process: Using `Github Actions` to implement automated building. GitHub Actions can automate code building, testing, and deployment, supporting multiple languages and frameworks.
 
-公网部署方案：使用阿里云服务器，通过域名解析将域名指向服务器，然后通过nginx反向代理将请求转发到 hugo 站点。
+Public deployment solution: Using Alibaba Cloud server, resolving the domain name to point to the server, then using Nginx reverse proxy to forward requests to the Hugo site.
 
-## 搭建步骤
+## Setup Steps
 
-### 1. 网站文件和本地Web服务
+### 1. Website Files and Local Web Service
 
-使用`hugo`命令生成网站文件，通常是使用`hugo [options]`命令，生成的文件通常在`public`目录下。
+Use the `hugo` command to generate website files, typically using `hugo [options]`, and the generated files are usually in the `public` directory.
 
-使用`nginx(docker)`在本地（即云服务器上）的 2080 端口部署一个 Web 服务，网站文件即为上一步生成的`public`目录。
+Use `nginx(docker)` to deploy a web service on local port 2080 (on the cloud server), with the website files being the `public` directory generated in the previous step.
 
-下面是 nginx 的 docker compose 文件和配置文件，注意 public 映射的目录和 nginx.conf 配置文件中的 root 要对应上。
+Below are the Nginx docker compose file and configuration file. Make sure that the directory mapped to public and the root in the nginx.conf configuration file correspond.
 
 ```yaml
--- nginx的docker compose文件
+-- Nginx docker compose file
 services:
   nginx:
     image: nginx:1.25-alpine
@@ -67,36 +67,36 @@ server {
         try_files $uri $uri/ =404;
     }
 
-    # 摄影集需要大文件支持
+    # Support for large files in photo galleries
     client_max_body_size 20M;
 }
 ```
 
-### 2. 反向代理和备案
+### 2. Reverse Proxy and Domain Registration
 
-目前，这个运行在本地 2080 端口的 Web 服务只可以使用`ip:port`方式访问。如果想要用 https + 域名的方式访问，则需要配置反向代理。
+Currently, this web service running on local port 2080 can only be accessed using the `ip:port` method. If you want to access it using https + domain name, you need to configure a reverse proxy.
 
-我们需要另一个`nginx`做反向代理，这里我选用的是`nginx proxy manager(docker)`——一个图形化管理界面，可以管理多个web服务的反向代理并可以自动申请SSL证书，方便我们使用`https`协议访问。[NPM的项目地址](https://github.com/NginxProxyManager/nginx-proxy-manager)
+We need another `nginx` as a reverse proxy. Here I chose `nginx proxy manager(docker)` - a graphical management interface that can manage reverse proxies for multiple web services and automatically apply for SSL certificates, making it convenient to access using the `https` protocol. [NPM Project Page](https://github.com/NginxProxyManager/nginx-proxy-manager)
 
-![nginx-proxy-manager](./nginx-proxy-manager.png "nginx proxy manager 配置反向代理，自动获取 SSL 证书")
+![nginx-proxy-manager](./nginx-proxy-manager.png "nginx proxy manager configuring reverse proxy, automatically obtaining SSL certificates")
 
-如图，NPM 将会监听服务器的 443 端口，当以域名 blog.uncoder.cn 和 https 协议访问该服务器时，会被转发到本地的2080端口(localhost:2080)
+As shown, NPM will listen on port 443 of the server. When accessing the server with the domain name blog.uncoder.cn and https protocol, it will be forwarded to the local port 2080 (localhost:2080).
 
-最后我们需要修改 DNS 解析，让域名可以指向这个服务器。我是阿里云服务器，DNS解析服务也是直接用的阿里云的,添加一条A记录即可。
+Finally, we need to modify the DNS resolution to make the domain point to this server. I'm using Alibaba Cloud server, and the DNS resolution service is also directly from Alibaba Cloud. Just add an A record.
 
-![dns-config](./dns-config.png "为自己的域名增加一条 DNS 解析")
+![dns-config](./dns-config.png "Adding a DNS resolution for your domain")
 
-由于国内政策问题，一般云服务器的 80 和 443 端口都需要备案才可以使用。我们直接在阿里云进行备案，完成域名备案之后，就可以直接使用域名进行访问了。备案的步骤在阿里云都有很详细的引导，这里不再赘述。最后我们可以将备案号加在网站的脚注上。
+Due to Chinese policy regulations, ports 80 and 443 on cloud servers generally require domain registration for use. We can register directly on Alibaba Cloud. After completing the domain registration, we can access it directly using the domain name. The registration steps are guided in detail on Alibaba Cloud, so I won't elaborate further. Finally, we can add the registration number in the website footer.
 
 {{<alert>}}
-别忘了在防火墙上放开必要的端口！
+Don't forget to open the necessary ports in the firewall!
 {{</alert>}}
 
-### 3. 自动化部署
+### 3. Automated Deployment
 
-最后，**优化流程**。我们的网站现在每次在改动之后，都需要重新生成文件，并且需要一直在部署环境（云服务器）上操作。所以我们将部署环境和生产环境分离，通过将网站项目托管在 Github 上，再使用 CI 工具 Github Actions 实现自动化生产和部署。
+Finally, **optimizing the workflow**. Our website now needs to regenerate files after each change, and we need to continue operating on the deployment environment (cloud server). Therefore, we separate the deployment environment from the production environment by hosting the website project on Github and using the CI tool Github Actions to implement automated production and deployment.
 
-实现的效果是，每当项目的 master 分支有 commit 更新时，就会触发你设定的一系列动作。下面结合 deploy 文件看看具体执行了哪些动作：
+The effect is that whenever there is a commit update to the master branch of the project, it will trigger a series of actions you have set. Let's look at what specific actions are executed in conjunction with the deploy file:
 
 ```yaml
 name: Deploy Hugo Site
@@ -104,7 +104,7 @@ name: Deploy Hugo Site
 on:
   push:
     branches:
-      - master  # 当 master 分支有更新时触发
+      - master  # Triggered when the master branch is updated
 
 jobs:
   build-and-deploy:
@@ -117,7 +117,7 @@ jobs:
     - name: Set up Hugo
       uses: peaceiris/actions-hugo@v2
       with:
-        hugo-version: '0.143.1'  # 使用你需要的 Hugo 版本
+        hugo-version: '0.143.1'  # Use the Hugo version you need
         extended: true
 
     - name: Clean cache
@@ -133,14 +133,14 @@ jobs:
         username: ${{ secrets.SERVER_USER }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         source: "public/"
-        target: "/path/to/blog"  # 替换为你的服务器网站路径
+        target: "/path/to/blog"  # Replace with your server website path
 ```
 
-整个过程是这样的：
-1. 当我们推送代码到 master 分支
-2. GitHub Actions 会创建一个新的 Ubuntu 环境
-3. 在这个环境中安装 Hugo
-4. 构建我们的网站
-5. 将构建好的文件通过 SCP 传输到我们的服务器
+The entire process is as follows:
+1. When we push code to the master branch
+2. GitHub Actions creates a new Ubuntu environment
+3. Install Hugo in this environment
+4. Build our website
+5. Transfer the built files to our server via SCP
 
-这样就实现了网站的自动化部署，我们只需要专注于内容的创作，提交代码后，部署工作会自动完成。
+This achieves automated deployment of the website, so we only need to focus on content creation. After committing the code, the deployment work will be completed automatically.
