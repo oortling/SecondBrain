@@ -85,12 +85,12 @@ NPM 的 Github 项目地址：
 
 如图，NPM 将会监听服务器的 443 端口，当以域名 blog.uncoder.cn 和 https 协议访问该服务器时，会被转发到本地的2080端口(localhost:2080)
 
-![nginx-proxy-manager](/content/blog/configuration/nginx-proxy-manager.png "nginx proxy manager 配置反向代理，自动获取 SSL 证书")
+![nginx-proxy-manager](./nginx-proxy-manager.zh-cn.png "nginx proxy manager 配置反向代理，自动获取 SSL 证书")
 
 
 最后我们需要修改 DNS 解析，让域名可以指向这个服务器。我是阿里云服务器，DNS解析服务也是直接用的阿里云的,添加一条A记录即可。
 
-![dns-config](/content/blog/configuration/dns-config.png "为自己的域名增加一条 DNS 解析")
+![dns-config](./dns-config.zh-cn.png "为自己的域名增加一条 DNS 解析")
 
 由于国内政策问题，一般云服务器的 80 和 443 端口都需要备案才可以使用。我们直接在阿里云进行备案，完成域名备案之后，就可以直接使用域名进行访问了。备案的步骤在阿里云都有很详细的引导，这里不再赘述。最后我们可以将备案号加在网站的脚注上。
 
