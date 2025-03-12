@@ -3,10 +3,12 @@ title: "网站部署"
 date: "2025-02-09"
 lastmod: "2025-03-07"
 cover: "thumb-sigmund-taxUPTfDkpc-unsplash.jpg"
-summary: "这是我的自动化网站部署流程。"
+summary: "本站的自动化部署流程。"
 coverAlt: "使用Hugo和GitHub Actions自动部署个人博客的计划。"
 coverCaption: "让我们构建您的网站！"
 showDateUpdated: true
+showTableOfContents : true
+tags: ["配置", "建站"]
 ---
 
 ## 准备条件
@@ -34,7 +36,7 @@ showDateUpdated: true
 下面是 nginx 的 docker compose 文件和配置文件，注意 public 映射的目录和 nginx.conf 配置文件中的 root 要对应上。
 
 ```yaml
--- nginx的docker compose文件
+# nginx的docker compose文件
 services:
   nginx:
     image: nginx:1.25-alpine
@@ -76,21 +78,25 @@ server {
 
 目前，这个运行在本地 2080 端口的 Web 服务只可以使用`ip:port`方式访问。如果想要用 https + 域名的方式访问，则需要配置反向代理。
 
-我们需要另一个`nginx`做反向代理，这里我选用的是`nginx proxy manager(docker)`——一个图形化管理界面，可以管理多个web服务的反向代理并可以自动申请SSL证书，方便我们使用`https`协议访问。[NPM的项目地址](https://github.com/NginxProxyManager/nginx-proxy-manager)
+我们需要另一个`nginx`做反向代理，这里我选用的是`nginx proxy manager(docker)`——一个图形化管理界面，可以管理多个web服务的反向代理并可以自动申请SSL证书，方便我们使用`https`协议访问。
 
-![nginx-proxy-manager](./nginx-proxy-manager.png "nginx proxy manager 配置反向代理，自动获取 SSL 证书")
+NPM 的 Github 项目地址：
+{{< github repo="NginxProxyManager/nginx-proxy-manager" >}}
 
 如图，NPM 将会监听服务器的 443 端口，当以域名 blog.uncoder.cn 和 https 协议访问该服务器时，会被转发到本地的2080端口(localhost:2080)
 
+![nginx-proxy-manager](/content/blog/configuration/nginx-proxy-manager.png "nginx proxy manager 配置反向代理，自动获取 SSL 证书")
+
+
 最后我们需要修改 DNS 解析，让域名可以指向这个服务器。我是阿里云服务器，DNS解析服务也是直接用的阿里云的,添加一条A记录即可。
 
-![dns-config](./dns-config.png "为自己的域名增加一条 DNS 解析")
+![dns-config](/content/blog/configuration/dns-config.png "为自己的域名增加一条 DNS 解析")
 
 由于国内政策问题，一般云服务器的 80 和 443 端口都需要备案才可以使用。我们直接在阿里云进行备案，完成域名备案之后，就可以直接使用域名进行访问了。备案的步骤在阿里云都有很详细的引导，这里不再赘述。最后我们可以将备案号加在网站的脚注上。
 
-{{<alert>}}
+{{< alert >}}
 别忘了在防火墙上放开必要的端口！
-{{</alert>}}
+{{< /alert >}}
 
 ### 3. 自动化部署
 

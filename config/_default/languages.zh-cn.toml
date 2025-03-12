@@ -1,24 +1,25 @@
 disabled = false
-languageCode = "en"
-languageName = "English"
-weight = 1
+languageCode = "zh-cn"
+languageName = "简体中文"
+weight = 2
 title = "Kieran"
 
 [params]
-displayName = "English"
-isoCode = "en"
+displayName = "简体中文"
+isoCode = "zh-cn"
 rtl = false
-dateFormat = "2 January 2006"
+dateFormat = "2006-01-02"
 logo = "img/logo.png"
 # secondaryLogo = "img/secondary-logo.png"
 # description = "My awesome website"
 # copyright = "Copy, _right?_ :thinking_face:"
 
+
 [params.author]
 name = "Kieran"
 image = "img/author.png"
-headline = "The only way to do great work is to love what you do."
-bio = "A software engineer, Vimer."
+headline = "越过山丘，才发现无人等候"
+bio = "软件工程师、Vimer、喜欢折腾"
 links = [
   { email = "oldmeatovo@gmail.com" },
   { github = "https://github.com/uncoder404" },

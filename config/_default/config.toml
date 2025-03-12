@@ -1,7 +1,0 @@
-defaultContentLanguage = "en"
-
-baseURL = "https://blog.uncoder.cn"
-
-[outputs]
-    home = ["HTML", "RSS", "JSON"]
-

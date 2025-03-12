@@ -11,12 +11,12 @@
 # ordered by weight from lowest to highest.
 
 [[main]]
-name = "Blog"
+name = "博客"
 pageRef = "posts"
 weight = 10
 
 [[main]]
-name = "Gallery"
+name = "光影"
 pageRef = "photography"
 weight = 20
 
@@ -71,7 +71,7 @@ weight = 20
 # [[footer]]
 #   name = "Categories"
 #   pageRef = "categories"
-#   weight = 10
+#   weight = 20
 
 [[footer]]
 name = "皖ICP备2025075131号"

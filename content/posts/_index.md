@@ -7,6 +7,9 @@ cascade:
   showSummary: true
 ---
 
-{{< lead >}}
-Congo brings your content to life. :heart_eyes:
-{{< /lead >}}
+**Welcome to my blog.**
+
+This is my blog. I write about my experiences and thoughts on my blog.
+
+---
+

@@ -2,11 +2,10 @@
 title: "Website Deployment"
 date: "2025-02-09"
 lastmod: "2025-03-07"
-cover: "thumb-sigmund-taxUPTfDkpc-unsplash.jpg"
-summary: "This is my automated website deployment process."
-coverAlt: "A plan for automating the deployment of a personal blog using Hugo and GitHub Actions."
-coverCaption: "Let's build your website!"
+summary: "My automated website deployment process"
 showDateUpdated: true
+showTableOfContents : true
+tags: ["Config", "Blog"]
 ---
 
 ## Prerequisites
@@ -76,11 +75,15 @@ server {
 
 Currently, this web service running on local port 2080 can only be accessed using the `ip:port` method. If you want to access it using https + domain name, you need to configure a reverse proxy.
 
-We need another `nginx` as a reverse proxy. Here I chose `nginx proxy manager(docker)` - a graphical management interface that can manage reverse proxies for multiple web services and automatically apply for SSL certificates, making it convenient to access using the `https` protocol. [NPM Project Page](https://github.com/NginxProxyManager/nginx-proxy-manager)
+We need another `nginx` as a reverse proxy. Here I chose `nginx proxy manager(docker)` - a graphical management interface that can manage reverse proxies for multiple web services and automatically apply for SSL certificates, making it convenient to access using the `https` protocol.
+
+NPM 的 Github 项目地址：
+{{< github repo="NginxProxyManager/nginx-proxy-manager" >}}
+
+As shown, NPM will listen on port 443 of the server. When accessing the server with the domain name blog.uncoder.cn and https protocol, it will be forwarded to the local port 2080 (localhost:2080).
 
 ![nginx-proxy-manager](./nginx-proxy-manager.png "nginx proxy manager configuring reverse proxy, automatically obtaining SSL certificates")
 
-As shown, NPM will listen on port 443 of the server. When accessing the server with the domain name blog.uncoder.cn and https protocol, it will be forwarded to the local port 2080 (localhost:2080).
 
 Finally, we need to modify the DNS resolution to make the domain point to this server. I'm using Alibaba Cloud server, and the DNS resolution service is also directly from Alibaba Cloud. Just add an A record.
 
@@ -88,9 +91,9 @@ Finally, we need to modify the DNS resolution to make the domain point to this s
 
 Due to Chinese policy regulations, ports 80 and 443 on cloud servers generally require domain registration for use. We can register directly on Alibaba Cloud. After completing the domain registration, we can access it directly using the domain name. The registration steps are guided in detail on Alibaba Cloud, so I won't elaborate further. Finally, we can add the registration number in the website footer.
 
-{{<alert>}}
-Don't forget to open the necessary ports in the firewall!
-{{</alert>}}
+{{< alert >}}
+Don't forget to open the necessary ports in the firewall !
+{{< /alert >}}
 
 ### 3. Automated Deployment
 

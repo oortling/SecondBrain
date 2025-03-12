@@ -8,11 +8,11 @@ summary: "我的HomeLab介绍"
 # cover: "thumb-imgix-pgdaAwf6IJg-unsplash.jpg"
 coverCaption: "Not All in Boom！"
 showDateUpdated: true
+showTableOfContents : true
+tags: ["HomeLab", "虚拟化", "家庭存储"]
 ---
 
-{{< lead >}}
 构建你自己的家庭数据中心
-{{< /lead >}}
 
 ## 总览
 
