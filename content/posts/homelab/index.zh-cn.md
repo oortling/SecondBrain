@@ -12,7 +12,7 @@ showTableOfContents : true
 tags: ["HomeLab", "虚拟化", "家庭存储"]
 ---
 
-构建你自己的家庭数据中心
+> 构建你自己的家庭数据中心
 
 ## 总览
 

@@ -11,7 +11,7 @@ showTableOfContents : true
 tags: ["HomeLab", "PVE", "NAS"]
 ---
 
-Build your own home data center
+> Build your own home data center
 
 ## Overview
 

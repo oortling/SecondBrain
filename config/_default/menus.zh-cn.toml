@@ -63,17 +63,17 @@ weight = 20
 # the copyright notice. Configure as per the main menu above.
 
 
-# [[footer]]
-#   name = "Tags"
-#   pageRef = "tags"
-#   weight = 10
-
-# [[footer]]
-#   name = "Categories"
-#   pageRef = "categories"
-#   weight = 20
+[[footer]]
+name = "Tags"
+pageRef = "tags"
+weight = 10
 
 [[footer]]
-name = "皖ICP备2025075131号"
-url = "https://beian.miit.gov.cn/"
-weight = 10
+name = "Categories"
+pageRef = "categories"
+weight = 20
+
+# [[footer]]
+# name = "皖ICP备2025075131号"
+# url = "https://beian.miit.gov.cn/"
+# weight = 10
