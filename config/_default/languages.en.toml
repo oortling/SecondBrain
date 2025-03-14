@@ -17,7 +17,7 @@ logo = "img/logo.png"
 [params.author]
 name = "Kieran"
 image = "img/author.png"
-headline = "The only way to do great work is to love what you do."
+headline = "Over the mountains, mountains."
 bio = "A software engineer, Vimer."
 links = [
   { email = "oldmeatovo@gmail.com" },
