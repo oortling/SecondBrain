@@ -1,12 +1,10 @@
 ---
 title: "网站部署"
 date: "2025-02-09"
-lastmod: "2025-03-07"
 cover: "thumb-sigmund-taxUPTfDkpc-unsplash.jpg"
 summary: "本站的自动化部署流程。"
 coverAlt: "使用Hugo和GitHub Actions自动部署个人博客的计划。"
 coverCaption: "让我们构建您的网站！"
-showDateUpdated: true
 showTableOfContents : true
 tags: ["配置", "建站"]
 ---
@@ -82,6 +80,9 @@ server {
 
 NPM 的 Github 项目地址：
 {{< github repo="NginxProxyManager/nginx-proxy-manager" >}}
+
+红茶大佬的视频教程:
+{{< bilibili BV1HKkZYVEBR >}}
 
 如图，NPM 将会监听服务器的 443 端口，当以域名 blog.uncoder.cn 和 https 协议访问该服务器时，会被转发到本地的2080端口(localhost:2080)
 

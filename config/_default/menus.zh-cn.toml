@@ -20,21 +20,26 @@ name = "光影"
 pageRef = "photography"
 weight = 20
 
-#[[main]]
-#  name = "Parent"
-#  weight = 20
+[[main]]
+name = "代码"
+weight = 30
 
-#[[main]]
-#  name = "example sub-menu 1"
-#  parent = "Parent"
-#  pageRef = "posts"
-#  weight = 20
+[[main]]
+name = "编程语言"
+parent = "代码"
+pageRef = "codes"
+weight = 30
 
-#[[main]]
-#  name = "example sub-menu 2"
-#  parent = "Parent"
-#  pageRef = "posts"
-#  weight = 20
+[[main]]
+name = "AIDE"
+parent = "代码"
+pageRef = "codes"
+weight = 30
+
+[[main]]
+name = "关于"
+pageRef = "about"
+weight = 40
 
 #[[subnavigation]]
 #  name = "An interesting topic"

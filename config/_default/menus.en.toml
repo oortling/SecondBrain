@@ -20,21 +20,26 @@ name = "Gallery"
 pageRef = "photography"
 weight = 20
 
-#[[main]]
-#  name = "Parent"
-#  weight = 20
+[[main]]
+name = "Code"
+weight = 30
 
-#[[main]]
-#  name = "example sub-menu 1"
-#  parent = "Parent"
-#  pageRef = "posts"
-#  weight = 20
+[[main]]
+name = "PL"
+parent = "Code"
+pageRef = "posts"
+weight = 30
 
-#[[main]]
-#  name = "example sub-menu 2"
-#  parent = "Parent"
-#  pageRef = "posts"
-#  weight = 20
+[[main]]
+name = "AIDE"
+parent = "Code"
+pageRef = "posts"
+weight = 30
+
+[[main]]
+name = "About"
+pageRef = "about"
+weight = 40
 
 #[[subnavigation]]
 #  name = "An interesting topic"

@@ -1,9 +1,7 @@
 ---
 title: "Website Deployment"
 date: "2025-02-09"
-lastmod: "2025-03-07"
 summary: "My automated website deployment process"
-showDateUpdated: true
 showTableOfContents : true
 tags: ["Config", "Blog"]
 ---
@@ -77,8 +75,11 @@ Currently, this web service running on local port 2080 can only be accessed usin
 
 We need another `nginx` as a reverse proxy. Here I chose `nginx proxy manager(docker)` - a graphical management interface that can manage reverse proxies for multiple web services and automatically apply for SSL certificates, making it convenient to access using the `https` protocol.
 
-NPM 的 Github 项目地址：
+NPM's GitHub project address:
 {{< github repo="NginxProxyManager/nginx-proxy-manager" >}}
+
+Video tutorial on black tea:
+{{< bilibili BV1HKkZYVEBR >}}
 
 As shown, NPM will listen on port 443 of the server. When accessing the server with the domain name blog.uncoder.cn and https protocol, it will be forwarded to the local port 2080 (localhost:2080).
 
