@@ -123,8 +123,8 @@ smartTOCHideUnfocusedChildren = false
   cardViewScreenWidth = false
 
 [artalk]
-  server = 'http://47.96.170.123:8080'
-  site = 'Code // Horizon'
+  server = "https://comment.uncoder.cn"
+  site = "Code // Horizon"
 
 [firebase]
   # apiKey = "XXXXXX"
