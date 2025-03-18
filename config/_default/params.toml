@@ -50,6 +50,7 @@ smartTOCHideUnfocusedChildren = false
   layoutBackgroundBlur = true # only used when layout equals background
 
 [article]
+  showComments = true
   showDate = true
   showViews = false
   showLikes = false
@@ -120,6 +121,10 @@ smartTOCHideUnfocusedChildren = false
   groupByYear = false
   cardView = true
   cardViewScreenWidth = false
+
+[artalk]
+  server = 'https://blog.uncoder.cn'
+  site = 'Code // Horizon'
 
 [firebase]
   # apiKey = "XXXXXX"

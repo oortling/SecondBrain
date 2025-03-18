@@ -1,0 +1,19 @@
+<!-- CSS -->
+<link href="https://blog.uncoder.cn/dist/Artalk.css" rel="stylesheet">
+
+<!-- JS -->
+<script src="https://blog.uncoder.cn/dist/Artalk.js"></script>
+
+<!-- Artalk -->
+<div id="Comments"></div>
+
+<script>
+  Artalk.init({
+    el: '#Comments',
+    pageKey: '{{ .Permalink }}',
+    pageTitle: '{{ .Title }}',
+    server: '{{ $.Site.Params.artalk.server }}',
+    site: '{{ $.Site.Params.artalk.site }}',
+    // ...你的其他配置
+  })
+</script>
