@@ -83,12 +83,12 @@ Video tutorial on black tea:
 
 As shown, NPM will listen on port 443 of the server. When accessing the server with the domain name blog.uncoder.cn and https protocol, it will be forwarded to the local port 2080 (localhost:2080).
 
-![nginx-proxy-manager](./nginx-proxy-manager.png "nginx proxy manager configuring reverse proxy, automatically obtaining SSL certificates")
+![nginx-proxy-manager](./nginx-proxy-manager.en.png "nginx proxy manager configuring reverse proxy, automatically obtaining SSL certificates")
 
 
 Finally, we need to modify the DNS resolution to make the domain point to this server. I'm using Alibaba Cloud server, and the DNS resolution service is also directly from Alibaba Cloud. Just add an A record.
 
-![dns-config](./dns-config.png "Adding a DNS resolution for your domain")
+![dns-config](./dns-config.en.png "Adding a DNS resolution for your domain")
 
 Due to Chinese policy regulations, ports 80 and 443 on cloud servers generally require domain registration for use. We can register directly on Alibaba Cloud. After completing the domain registration, we can access it directly using the domain name. The registration steps are guided in detail on Alibaba Cloud, so I won't elaborate further. Finally, we can add the registration number in the website footer.
 

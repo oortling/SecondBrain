@@ -12,8 +12,7 @@ dateFormat = "2006-01-02"
 # logo = "img/logo.png"
 # secondaryLogo = "img/secondary-logo.png"
 # description = "My awesome website"
-# copyright = "Copy, _right?_ :thinking_face:"
-
+copyright = "@ 2025 Code // Horizon"
 
 [params.author]
 name = "Kieran"
