@@ -127,12 +127,3 @@
 td {
     vertical-align: middle !important;
 }
-
-@font-face {
-    font-family: font;
-    src: url('/fonts/LXGWWenKaiScreen.woff2');
-}
-
-html {
-    font-family: font;
-}

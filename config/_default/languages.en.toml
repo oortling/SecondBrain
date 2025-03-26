@@ -2,7 +2,7 @@ disabled = false
 languageCode = "en"
 languageName = "English"
 weight = 1
-title = "Code // Horizon"
+title = "Code Horizon"
 
 [params]
 displayName = "English"
@@ -12,7 +12,7 @@ dateFormat = "2 January 2006"
 # logo = "img/logo.png"
 # secondaryLogo = "img/secondary-logo.png"
 # description = "My awesome website"
-copyright = "@ 2025 Code // Horizon"
+# copyright = "@ 2025 Code // Horizon"
 
 [params.author]
 name = "Kieran"

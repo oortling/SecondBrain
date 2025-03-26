@@ -2,14 +2,14 @@ disabled = false
 languageCode = "zh-cn"
 languageName = "简体中文"
 weight = 2
-title = "Code // Horizon"
+title = "Code Horizon"
 
 [params]
 displayName = "简体中文"
 isoCode = "zh-cn"
 rtl = false
 dateFormat = "2006-01-02"
-# logo = "img/logo.png"
+# logo = "img/logo-02.svg"
 # secondaryLogo = "img/secondary-logo.png"
 # description = "My awesome website"
 copyright = "@ 2025 Code // Horizon"
