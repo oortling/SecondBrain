@@ -17,7 +17,7 @@ weight = 10
 
 [[main]]
 name = "Gallery"
-pageRef = "photography"
+url = "https://gallery.uncoder.cn"
 weight = 20
 
 [[main]]
